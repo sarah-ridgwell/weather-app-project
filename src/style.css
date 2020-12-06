@@ -1,0 +1,45 @@
+h1 {
+  color: #5a6275;
+  font-family: "Varta", sans-serif;
+  padding: 30px;
+}
+card {
+  margin-top: 70px;
+  padding: 40px;
+}
+img {
+  width: 150px;
+}
+form {
+  width: 250px;
+}
+li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+ul {
+  padding-inline-start: 22px;
+}
+
+.days {
+  margin-top: 20px;
+  color: #5a6275;
+  font-family: "Varta", sans-serif;
+  font-size: 30px;
+  padding: 30px;
+}
+.current-weather {
+  text-align: center;
+  font-size: 100px;
+}
+.city-input {
+  padding: 30px;
+}
+.cloud,
+.sun {
+  font-size: 60px;
+}
+.weatherdesc {
+  text-transform: capitalize;
+}
