@@ -1,9 +1,10 @@
 function showWeather(response) {
   let apiCityName = (document.querySelector("#city").innerHTML =
     response.data.name);
+  celsiusTemperature = response.data.main.temp;
   let temperatureElement = (document.querySelector(
     `#number`
-  ).innerHTML = Math.round(response.data.main.temp));
+  ).innerHTML = Math.round(celsiusTemperature));
   let description = (document.querySelector("#description").innerHTML =
     response.data.weather[0].description);
   let iconElement = document.querySelector("#icon");
@@ -45,21 +46,18 @@ function getCurrentLocation(event) {
 let currentLocation = document.querySelector(`#location-button`);
 currentLocation.addEventListener("click", getCurrentLocation);
 
-function convertCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(`#number`);
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = 10;
-}
-
 function convertFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(`#number`);
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = 40;
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 31;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
+function convertCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(`#number`);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
 
 let celsiusClick = document.querySelector(`#celsius`);
 celsiusClick.addEventListener("click", convertCelsius);
