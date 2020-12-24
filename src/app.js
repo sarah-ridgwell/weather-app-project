@@ -4,9 +4,13 @@ function showWeather(response) {
   let temperatureElement = (document.querySelector(
     `#number`
   ).innerHTML = Math.round(response.data.main.temp));
-  console.log(response);
   let description = (document.querySelector("#description").innerHTML =
     response.data.weather[0].description);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(city) {
