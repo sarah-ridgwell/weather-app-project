@@ -7,6 +7,10 @@ function showWeather(response) {
   ).innerHTML = Math.round(celsiusTemperature));
   let description = (document.querySelector("#description").innerHTML =
     response.data.weather[0].description);
+  let windspeed = (document.querySelector("#windspeed").innerHTML =
+    response.data.wind.speed);
+  let humidity = (document.querySelector("#humidity").innerHTML =
+    response.data.main.humidity);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
